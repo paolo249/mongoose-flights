@@ -1,0 +1,35 @@
+<%- include('../partials/footer') %>
+    <h2>Search New Flight Info</h2>
+    <form action="/flights" method="POST">
+        <label>Airline:
+            <select name="airline">
+            <option value="American">American</option>
+            <option value="Southwest">Southwest</option>
+            <option value="United">United</option>
+            </select>
+        </label><br>
+        <label>Airport:
+            <select name="airport">
+            <option value="AUS">AUS</option>
+            <option value="DFW">DEB</option>
+            <option value="DEN">DEN</option>
+            <option value="LAX">LAX</option>
+            <option value="SAN">SAN</option>
+            </select>
+        </label><br>
+        <label>Flight:
+            <input type= "num"  name="flightNo">
+        </label><br> 
+        <label>Departure Date:
+            <input type="datetime-local" name="departs">
+        </label><br>
+        <label>Status: 
+            <select name="status">
+            <option value="LANDED">LANDED</option>
+            <option value="DELAYED">DELAYED</option>
+            <option value="BOARDED">BOARDED</option>
+            </select>
+        </label><br>
+            <input type="submit" value="Add Flight">
+    </form>
+    <%- include('../partials/footer') %>
