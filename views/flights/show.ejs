@@ -1,45 +1,50 @@
 <%- include('../partials/header') %>
 
 <section id="show-page">
-  <div>Title: </div>
+  <div>Airline: </div>
   <div><%= flight.airline %></div>
-  <div>Release Year: </div>
+  <div>Airport: </div>
   <div><%= flight.airport %></div>
-  <div>Rating: </div>
+  <div>Flight No: </div>
   <div><%= flight.flightNo %></div>
-  <div>Cast: </div>
-  <div><%= flight.departs) %></div>
-  <div>Now Showing: </div>
-  <div><%= flight.nowShowing ? 'Yes' : 'Nope' %></div>
+  <div>Departs: </div>
+  <div><%= flight.departs  %></div>
+  <div>Status: </div>
+  <div><%= flight.status %></div>
 </section>
 
-<br><br><h2>Reviews</h2>
-<form id="add-review-form" method="POST"
-  action="/movies/<%= flight._id %>/reviews">
-  <label>Review:</label>
+<br><br><h2>Add Destination</h2>
+<form id="add-dest-form" method="POST"
+  action="/flights/<%= flight._id %>/destinations">
+  <label>Destination:</label>
   <textarea name="content"></textarea>
-  <label>Rating:</label>
-  <select name="rating">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5" selected>5</option>
-  </select>
-  <input type="submit" value="Add Review">
+  </label>
+  <label>Departure Date:
+    <input type="datetime-local" name="departs">
+</label><br>
+<label>Airport:
+    <select name="airport">
+      <option value="AUS">AUS</option>
+      <option value="DFW">DEB</option>
+      <option value="DEN">DEN</option>
+      <option value="LAX">LAX</option>
+      <option value="SAN">SAN</option>
+    </select>
+    </label><br>
+  <input type="submit" value="Add Destination">
 </form>
 
-<% if (flight.reviews.length) { %>
+<% if (flight.destinations.length) { %>
   <table>
     <thead>
       <tr>
         <th>Date</th>
-        <th>Review</th>
-        <th>Rating</th>
+        <th>Destination</th>
+        <th>Airport</th>
       </tr>
     </thead>
     <tbody>
-      <% flight.reviews.forEach(function(r) { %>
+      <% flight.destinations.forEach(function(r) { %>
         <tr>
           <td><%= r.createdAt.toLocaleDateString() %></td>
           <td><%= r.content %></td>
@@ -49,7 +54,7 @@
     </tbody>
   </table>
 <% } else { %>
-  <h5>No Reviews Yet</h5>
+  <h5>No Destinations Yet</h5>
 <% } %>
   
 <%- include('../partials/footer') %>

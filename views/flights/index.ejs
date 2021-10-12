@@ -23,8 +23,8 @@
       <!-- Write the line of EJS to iterate over movies using forEach -->
       <% flights.forEach(function(m) { %>
         <tr>
-          <td><%= m.airline %></td>
           <td><%= m.airport %></td>
+          <td><%= m.airline %></td>
           <td><%= m.flightNo %></td>
           <td><%= m.departs %></td>
           <td><%= m.status %></td>
