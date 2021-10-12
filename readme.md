@@ -10,7 +10,7 @@
 
 
 ☐ Introduction: 
-
+- use localhost: 3000
 
 
 ☐ Screenshot(s): 
@@ -18,7 +18,7 @@
 
 ☐ Technologies Used: 
 - Mongoose,
-- Node.js,
+- Node.js, 
 - Express,
 - nodemon,
 - JavaScript,
