@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema; 
 
+
+
+
+
 const destinationSchema = new Schema({
     content: String,
     airport: {
@@ -46,6 +50,7 @@ const flightSchema = new Schema({
         type: String, 
         enum: ['LANDED','DELAYED','BOARDED']
     },
+    flight: {type: Schema.Types.ObjectId, ref: 'Flight'},
     destinations: [destinationSchema]
     }, {
         timestamps: true
