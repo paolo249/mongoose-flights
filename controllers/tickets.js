@@ -2,38 +2,24 @@ const Ticket = require('../models/Ticket');
 const Flight = require('../models/flight');
 
 module.exports = {
-    new: newTicket,
-    create,
-    addToTicket
+    new: newTicket, //bring to page to see form
+    create  // filling out form 
 };
 
 
-function addToTicket(req, res) {
-    Flight.findById(req.params.ticketId, function(err, flights) {
-      flights.flight.push(req.body.ticketId);
-      flights.save(function(err) {
-        res.redirect(`/tickets/${flights._id}`);
-      });
-    });
-  }
 
-  function create(req, res) {
+
+function create(req, res) {
+    req.body.flight=req.params.id;
     Ticket.create(req.body, function (err, ticket) {
-        res.render('tickets/new', {
-            title: 'Add Ticket',
-            performers
+        res.redirect(`/flights/${ticket.flight}`);
     });
-  });
 }
-  
-  function newTicket(req, res) {
-   Ticket.find({})
-      .sort('name')
-      .exec(function (err, tickets) {
-      res.render('tickets/new', {
-        title: 'Add Ticket',
-        tickets
-      });
-    })
-  }
-  
+//render the view
+function newTicket(req, res) {
+    res.render('tickets/new', {flightid: req.params.id});
+
+
+
+}
+//shift option f  -> formatting , no on ejs
