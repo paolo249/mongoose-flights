@@ -12,7 +12,8 @@ const destinationSchema = new Schema({
         enum: ['AUS', 'DFW', 'DEN', 'LAX', 'SAN'],
     },
     arrival: {
-        type: Date
+        type: Date,
+        required: true //most pro databases have this
     }
     }, {
         timestamps: true

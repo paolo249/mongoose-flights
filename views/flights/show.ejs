@@ -30,9 +30,8 @@
     </select>
     </label><br>
   <input type="submit"  value="Add Destination">
-  <button href ="/flights/:id/tickets/new" > New Ticket </button>
 </form>
-
+<a href="/flights/<%=flight._id%>/tickets/new"> New Ticket </a>
 <% if (flight.destinations.length) { %>
   <table>
     <thead>
@@ -49,10 +48,16 @@
           <td><%= r.airport %></td>
         </tr>
       <% }); %>
+      <th>Tickets</th>
+      <% tickets.forEach(function(t){ %>)
+        <td><%= t.seat %></td>
+        <td><%= t.price %></td>
+      <% }); %>
     </tbody>
   </table>
 <% } else { %>
   <h5>No Destinations Yet</h5>
 <% } %>
   
+
 <%- include('../partials/footer') %>

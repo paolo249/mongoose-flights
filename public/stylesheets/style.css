@@ -1,11 +1,11 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: bisque;
+  background-color: grey;
 }
 
 a {
-  color: #0011ff;
+  color: rgb(100, 17, 209);
 }
 
 
