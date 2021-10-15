@@ -36,8 +36,6 @@ https://gist.github.com/jim-clark/17908763db7bd3c403e6
 ☐ Next Steps:
 
 
-
-
 **** MY SIDE NOTES (TO BE DELETED WHEN FINISHED) ****
 COMMIT/PUSH to git
 git add -A
@@ -47,10 +45,9 @@ git push
 ☐ UPDATES:
 
 
+
+☐ ICEBOX ITEMS:
 Next Step(10/7/21): 
 - DELETE and EDIT (CRUD) 
 - add plus 1 to year (date)
 
-HTTP Method: 
-Purpose: Create a new post
-typ controller action: create

@@ -7,6 +7,10 @@ const Schema = mongoose.Schema;
 
 const destinationSchema = new Schema({
     content: String,
+    airline: {
+        type: String,
+        enum: ['American', 'SouthWest', 'United'],
+    },
     airport: {
         type: String, 
         enum: ['AUS', 'DFW', 'DEN', 'LAX', 'SAN'],
